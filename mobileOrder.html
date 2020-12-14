@@ -1,0 +1,435 @@
+ <!DOCTYPE HTML>
+
+ <html lang="en">
+
+
+ <head>
+     <meta charset="utf-8">
+     <title>Curbside | Scratch Cupcakery</title>
+     <link rel="icon" href="images/litte_picture.jpg">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="themes/Scratch_Cupcakery.min.css" />
+     <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,400;0,600;1,200&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/mobile_css.css">
+     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js"></script>
+     <script src="js/mobile.js"></script>
+ </head>
+
+ <body>
+
+     <!-- concept behind site: park in front of the store, qr code or tiny url for the site, order, cupcake brought to the car. A drive thru menu essentially.-->
+
+     <!--page 1, pick a cupcake -->
+     <div id="page1" data-role="page" data-theme="a">
+
+         <div data-role="header" data-position="fixed" class="ui-grid-b">
+             <div data-role="" class="ui-block-a header"><img src="images/litte_picture.jpg" alt="Scratch Cupcakery logo"></div>
+             <div class="ui-block-b">
+                 <h1>Scratch Curbside</h1>
+             </div>
+             <div class="ui-block-c">
+                 <a class="ui-btn-right ui-btn ui-btn-inline ui-corner-all ui-btn-icon-right ui-icon-phone ui-shadow" href="tel:123-456-7890">Help?</a>
+             </div>
+         </div>
+         <br />
+
+         <!-- today's menu header -->
+         <!-- click on cupcake-->
+         <!-- open pop up for to add a certain number to cart, special instructions box -->
+         <div>
+
+             <ul data-role="listview" class="ui-listview" data-icon="plus" data-divider-theme="a" data-count-theme="a">
+                 <li data-role="list-divider">Add Today's Cupcakes!</li>
+                 <li><a href="#addCupCakesPop1" data-rel="popup">
+                         <img src="images/bamm-bamm.webp" alt="bamm-bamm">
+                         <h3>Bamm-Bamm</h3>
+                         <p>strawberry cake, cream pie filling, marshmallow fruity pebble buttercream, fruity pebbles bar</p>
+                         <span id="ui-li-count1" class="ui-li-count"></span>
+                     </a></li>
+                 <li><a href="#addCupCakesPop2" data-rel="popup">
+                         <img src="images/fruitpizza.webp" alt="fruitpizza">
+                         <h3>Fruit Pizza</h3>
+                         <p>graham cake, cream cheese buttercream, mixed berries</p>
+                         <span id="ui-li-count2" class="ui-li-count"></span>
+                     </a></li>
+                 <li><a href="#addCupCakesPop3" data-rel="popup">
+                         <img src="images/peppermintvelvet.webp" alt="Peppermint Velvet image">
+                         <h3>Peppermint Velvet</h3>
+                         <p>red velvet cake, peppermint cream cheese filling, peppermint cream cheese buttercream, chocolate drizzle, peppermint pieces</p>
+                         <span id="ui-li-count3" class="ui-li-count"></span>
+                     </a></li>
+                 <li><a href="#addCupCakesPop4" data-rel="popup">
+                         <img src="images/appleDumpling.webp" alt="Apple Dumpling picture">
+                         <h3>Apple Dumpling</h3>
+                         <p>brown sugar cake, apple dumpling filling, vanilla glaze, brown sugar granola, apple pie filling, pie crust</p>
+                         <span id="ui-li-count4" class="ui-li-count"></span>
+                     </a></li>
+                     
+                     				 <li><a href="#addCupCakesPop5" data-rel="popup">
+                         <img src="images/Cookies_Cream_Truffle.webp" alt="Cookies & Cream Truffle picture">
+                         <h3>Cookies N' Cream Truffle</h3>
+                         <p>cookies and cream cake, cookies and cream buttercream, drizzled almond bark with cookie crumbles</p>
+                         <span id="ui-li-count5" class="ui-li-count"></span>
+                     </a></li>
+                     
+                     				 <li><a href="#addCupCakesPop6" data-rel="popup">
+                         <img src="images/Oh_Happy_Day.webp" alt="Oh Happy Day picture">
+                         <h3>Oh Happy Day</h3>
+                         <p>vanilla sprinkle cake, vanilla buttercream</p>
+                         <span id="ui-li-count6" class="ui-li-count"></span>
+                     </a></li>
+                     
+                     				 <li><a href="#addCupCakesPop7" data-rel="popup">
+                         <img src="images/Vegan_Carrot.webp" alt="Vegan Carrot picture">
+                         <h3>Vegan Carrot</h3>
+                         <p>vegan carrot spice cake, vegan vanilla buttercream, pecans</p>
+                         <span id="ui-li-count7" class="ui-li-count"></span>
+                     </a></li>
+
+
+
+
+
+
+
+
+
+
+             </ul>
+
+             <div data-role="popup" id="addCupCakesPop1" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect1">How many?</label>
+                     <input name="name" id="countOfCurrentSelect1" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/bamm-bamm.webp" alt="bamm-bamm">
+                 <h3>Bamm-Bamm</h3>
+                 <p>strawberry cake, cream pie filling, marshmallow fruity pebble buttercream, fruity pebbles bar</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+
+             <div data-role="popup" id="addCupCakesPop2" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect2">How many?</label>
+                     <input name="name" id="countOfCurrentSelect2" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/fruitpizza.webp" alt="fruitpizza">
+                 <h3>Fruit Pizza</h3>
+                 <p>graham cake, cream cheese buttercream, mixed berries</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+
+             <div data-role="popup" id="addCupCakesPop3" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect3">How many?</label>
+                     <input name="name" id="countOfCurrentSelect3" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+
+                 <img src="images/peppermintvelvet.webp" alt="Peppermint Velvet Image">
+                 <h3>Peppermint Velvet</h3>
+                 <p>red velvet cake, peppermint cream cheese filling, peppermint cream cheese buttercream, chocolate drizzle, peppermint pieces</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+
+             <div data-role="popup" id="addCupCakesPop4" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect4">How many?</label>
+                     <input name="name" id="countOfCurrentSelect4" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/appleDumpling.webp" alt="Apple Dumpling picture">
+                 <h3>Apple Dumpling</h3>
+                 <p>brown sugar cake, apple dumpling filling, vanilla glaze, brown sugar granola, apple pie filling, pie crust</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+             
+             <div data-role="popup" id="addCupCakesPop5" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect5">How many?</label>
+                     <input name="name" id="countOfCurrentSelect5" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/Cookies_Cream_Truffle.webp" alt="Cookies & Cream Truffle picture">
+                 <h3>Cookies N' Cream Truffle</h3>
+                 <p>cookies and cream cake, cookies and cream buttercream, drizzled almond bark with cookie crumbles</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+             
+             			<div data-role="popup" id="addCupCakesPop6" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect6">How many?</label>
+                     <input name="name" id="countOfCurrentSelect6" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/Oh_Happy_Day.webp" alt="Oh Happy Day picture">
+                 <h3>Oh Happy Day</h3>
+                 <p>vanilla sprinkle cake, vanilla buttercream</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+             
+             			<div data-role="popup" id="addCupCakesPop7" data-theme="b" data-overlay-theme="a" class="ui-content">
+
+                 <!-- jScript puts the contents of the list item into the popup -->
+                 <div class="ui-field-contain">
+
+                     <label for="countOfCurrentSelect7">How many?</label>
+                     <input name="name" id="countOfCurrentSelect7" type="number" data-clear-btn="true" min="0">
+
+                 </div>
+                 <img src="images/Vegan_Carrot.webp" alt="Vegan Carrot picture">
+                 <h3>Vegan Carrot</h3>
+                 <p>vegan carrot spice cake, vegan vanilla buttercream, pecans</p>
+
+                 <!-- price per item -->
+                 <p>$2.00</p>
+                 <!-- some sort of up/down clicker for number-->
+
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-popup ui-corner-all ui-overlay-shadow">Close</a>
+
+             </div>
+             
+             
+
+
+
+
+
+
+
+
+
+
+         </div>
+
+
+         <div data-role="footer" data-position="fixed" class="ui-grid-b">
+
+             <div class="ui-block-a">
+
+             </div>
+
+             <div class="ui-block-b">
+
+                 <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-shop ui-btn-inline shoppingCartIcon">$0.00</a>
+
+             </div>
+
+             <div class="ui-block-c">
+
+                 <a class="ui-btn ui-btn-icon-right
+                      ui-icon-arrow-r ui-shadow ui-corner-all ui-btn-inline " href="#page2">Next</a>
+
+             </div>
+
+         </div>
+     </div>
+
+     <div id="page2" data-role="page" data-theme="a">
+         <div data-role="header" data-position="fixed">
+             <h3>Information</h3>
+         </div>
+         <div data-role="main">
+
+             <form class="ui-body ui-body-a ui-corner-all" id="personal" action="#" method="get" autocomplete="on">
+
+                 <div class="ui-field-contain">
+
+                     <div class="ui-field-contain">
+                         <div class="row">
+                             <label class="data left1" for="car">Parking Spot?</label>
+
+                             <div class="data right1">
+                                 <input name="car" id="car" type="number" min="1" max="5" placeholder="1-5">
+                             </div>
+
+                         </div>
+
+                     </div>
+
+                     <div class="ui-field-contain">
+                         <div class="row">
+                             <label class="data left1">First &amp; Last Name</label>
+                             <div class="data right1">
+                                 <input name="firstLastName" id="firstLastName" type="text">
+                             </div>
+                         </div>
+
+                     </div>
+
+                     <div class="ui-field-contain">
+                         <div class="row">
+                             <label class="data left1" for="phoneNum">
+                                 Phone
+                                 <a href="#privacy" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn ui-alt-icon ui-nodisc-icon ui-btn-inline ui-icon-info ui-btn-icon-notext ui-shadow ui-corner-all" title="privacy"></a>
+                             </label>
+
+                             <div class="data right1">
+                                 <input name="phoneNum" id="phoneNum" type="text">
+                             </div>
+                         </div>
+
+                     </div>
+
+                 </div>
+
+                 <div data-role="popup" id="privacy" class="ui-content" data-theme="a">
+                       <p>In case we can't find your car or have a problem. We will not save personal information.</p>
+                 </div>
+
+             </form>
+
+         </div>
+
+         <div data-role="footer" data-position="fixed" class="ui-grid-b">
+
+             <div class="ui-block-a">
+                 <a class="ui-btn ui-btn-icon-left
+                      ui-icon-arrow-l ui-shadow ui-corner-all" href="#page1">Back</a>
+             </div>
+
+             <div class="ui-block-b">
+
+                 <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-shop ui-btn-inline shoppingCartIcon">$0.00</a>
+
+             </div>
+
+
+             <div class="ui-block-c">
+                 <a class="ui-btn ui-btn-icon-right
+                      ui-icon-arrow-r right ui-shadow ui-corner-all" href="#page3" id="nextPage2">Next</a>
+             </div>
+
+         </div>
+     </div>
+
+     <div id="page3" data-role="page" data-theme="a">
+         <div data-role="header" data-position="fixed">
+             <h3>Review</h3>
+         </div>
+
+         <div data-role="main">
+             <!-- confirmation number, tell them pick instructions -->
+
+             <!-- form where all the information is sent for final review and submit-->
+
+             <form id="order" action="#" method="get">
+
+                 <!-- I want to add something to the form so it can be submited -->
+
+             </form>
+
+
+             <!-- container for expected total-->
+             <ul data-role="listview" class="ui-listview" data-icon="">
+                 <li>
+                     <h3>Cupcake Total</h3>
+                     <p id="totalCostCupcakes">$0.00</p>
+                 </li>
+                 <li>
+                     <h3>A 6.0% Tax Rate</h3>
+                     <p id="tax">$0.00</p>
+
+                 </li>
+                 <li>
+                     <h3>Balance due</h3>
+                     <p id="balanceDue">$0.00</p>
+                 </li>
+                 <li>
+                     <a class="ui-btn ui-btn-icon-right
+                      ui-icon-star ui-shadow ui-corner-all" href="">Order</a>
+                 </li>
+
+             </ul>
+
+         </div>
+
+
+         <!-- (anchor buttons) -->
+
+         <div data-role="footer" data-position="fixed" class="ui-grid-b">
+             <div class="ui-block-a">
+                 <a class="ui-btn ui-btn-icon-left
+                      ui-icon-arrow-l ui-shadow ui-corner-all" href="#page2">Back</a>
+             </div>
+
+             <div class="ui-block-b">
+
+                 <a class="ui-btn ui-btn-icon-left
+                      ui-icon-back ui-shadow ui-corner-all" href="#page1">Change</a>
+             </div>
+             <div class="ui-block-c">
+
+             </div>
+         </div>
+
+     </div>
+
+ </body>
+
+
+
+ </html>

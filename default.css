@@ -1,0 +1,164 @@
+body {
+    background-color: #e56284;
+    font-family: 'poppins-extralight', 'poppins', sans-serif;
+    color: #43929C;
+    font-size: 14px;
+}
+
+#tabSet {
+    margin-left: auto;
+    margin-right: auto;
+    width: 89%;
+    background-color: #ffffff;
+    border-radius: 0px;
+    padding: 0px;
+    /*
+    height: 1300px;
+    */
+}
+
+/* general element styles*/
+
+#tabSet ul {
+    font-size: 16px;
+    font-family: 'poppins-regular', 'poppins', sans-serif;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: 'poppins-regular', sans-serif;
+}
+
+label {
+    margin-bottom: 9px;
+    padding: 4px 0px 0px 4px;
+    box-sizing: border-box;
+    font-family: 'poppins-extralight', 'poppins', sans-serif;
+    color: #43929C;
+    font-size: 14px;
+}
+
+textarea {
+    width: 450px;
+    height: 60px;
+    background-color: #d0e4e6;
+    border: none;
+    border-radius: 7px;
+    color: #1b4a47;
+    padding: 3px 3px 3px 22px;
+}
+
+/*input styles*/
+
+input[type=text] {
+    background-color: #d0e4e6;
+    border: none;
+    border-radius: 7px;
+    color: #1b4a47;
+}
+
+input[type=text]:focus {
+    border: none;
+    outline: none;
+    background-color: #e2eeef;
+}
+
+input {
+    box-sizing: border-box;
+    /* make this important because it latches onto the UI junk better */
+    position: relative !important;
+}
+
+
+
+/* an attempt at overriding the autocomplete styles*/
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #d0e4e6 inset !important;
+    -webkit-text-fill-color: #1b4a47 !important;
+}
+*/
+input:-webkit-autofill:focus, textarea:-webkit-autofill:focus, select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #e2eeef inset !important;
+    -webkit-text-fill-color: #1b4a47 !important;
+}
+
+input:-webkit-autofill:hover, textarea:-webkit-autofill:hover, select:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 1000px #e2eeef inset !important;
+    -webkit-text-fill-color: #1b4a47 !important;
+}
+
+
+:focus {
+    outline: none;
+}
+
+textarea:focus {
+    border: none;
+    outline: none;
+    background-color: #e2eeef;
+}
+
+/*class styles*/
+
+.smallInput {
+    width: 115px;
+    height: 50px;
+    padding: 3px 3px 3px 22px;
+    box-sizing: border-box;
+}
+
+.medInput {
+    width: 226px;
+    height: 50px;
+    padding: 3px 3px 3px 22px;
+    box-sizing: border-box;
+}
+
+.largeInput {
+    width: 600px;
+    height: 50px;
+    padding: 3px 3px 3px 22px;
+    box-sizing: border-box;
+}
+
+.row {
+    text-align: left;
+    display: inline-block;
+    margin: 15px 15px 30px 15px;
+    box-sizing: border-box;
+    vertical-align: text-top;
+}
+
+.group {
+    display: block;
+    box-sizing: border-box;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+/*error labels*/
+
+label.error {
+    color: #e56284;
+    display: block;
+    box-sizing: border-box;
+    margin: 0px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+}
+
+label.customError {
+    color: #e56284;
+    display: block;
+    box-sizing: border-box;
+    margin: 0px;
+    position: absolute;
+    font-size: 12px;
+}

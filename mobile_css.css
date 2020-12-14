@@ -1,0 +1,19 @@
+ label.error {
+    color: #e56284;
+    display: block;
+    box-sizing: border-box;
+    margin: 0px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 12px;
+
+}
+
+::placeholder {
+    color: #edced2;
+}
+
